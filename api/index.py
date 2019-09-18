@@ -50,6 +50,7 @@ class handler(BaseHTTPRequestHandler):
             },
             'customer': data['email'],
         }
+        headers['X-On-Behalf-Of'] = data['email']
         r = requests.post('%s/tickets' % BASE_URL, json=post_data, headers=headers)
         logger.debug('Create ticket: %s', r.json())
         return r.status_code, r.json()
