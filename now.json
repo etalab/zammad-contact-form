@@ -1,5 +1,8 @@
 {
   "env": {
     "Z_TOKEN": "@z-token"
+  },
+  "github": {
+    "silent": true
   }
 }
