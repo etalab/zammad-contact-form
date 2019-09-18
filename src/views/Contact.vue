@@ -78,7 +78,7 @@ export default {
     return {
       form: {
         email: '',
-        category: null,
+        category: this.$route.query.group,
         title: '',
         message: '',
         // honey pot
@@ -115,6 +115,11 @@ export default {
       }).finally(() => {
         this.sending = false
       })
+    }
+  },
+  watch: {
+    'form.category': function (newVal) {
+      this.$router.push({ query: { ...this.$route.query, group: newVal } })
     }
   }
 }
