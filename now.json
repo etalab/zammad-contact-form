@@ -1,6 +1,7 @@
 {
   "env": {
-    "Z_TOKEN": "@z-token"
+    "Z_TOKEN": "@z-token",
+    "Z_URL": "@z-url"
   },
   "github": {
     "silent": true
