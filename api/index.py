@@ -7,7 +7,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 SECRET_TOKEN = os.getenv('Z_TOKEN')
-BASE_URL = 'https://support.etalab.gouv.fr/api/v1'
+BASE_URL = os.getenv('Z_URL')
 
 
 class handler(BaseHTTPRequestHandler):
