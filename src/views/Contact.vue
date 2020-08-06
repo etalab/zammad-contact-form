@@ -70,6 +70,8 @@
 </template>
 
 <script>
+/* eslint no-console: ["error", { allow: ["error"] }] */
+
 import config from '@/config.js'
 
 export default {
