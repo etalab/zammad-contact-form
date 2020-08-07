@@ -91,7 +91,8 @@ export default {
       sending: false,
       error: false,
       success: false,
-      ticketId: ''
+      ticketId: '',
+      baseUrl: process.env.NODE_ENV === 'production' ? '' : 'http://localhost:5000'
     }
   },
   computed: {
@@ -105,7 +106,7 @@ export default {
   methods: {
     onSubmit () {
       this.sending = true
-      this.$http.post('/api', this.form).then(res => {
+      this.$http.post(`${this.baseUrl}/api`, this.form).then(res => {
         this.ticketId = res.body && res.body.id
         this.success = true
       }).catch(err => {
